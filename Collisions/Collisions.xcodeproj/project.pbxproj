@@ -21,6 +21,7 @@
 		AE1A324719242D0700A23EB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE1A324519242D0700A23EB9 /* InfoPlist.strings */; };
 		AE1A324919242D0700A23EB9 /* CollisionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1A324819242D0700A23EB9 /* CollisionsTests.m */; };
 		AE1A325419242DA000A23EB9 /* BallPitView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1A325319242DA000A23EB9 /* BallPitView.m */; };
+		AE7623C419255C260069C8F1 /* GravityLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7623C319255C260069C8F1 /* GravityLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		AE1A324819242D0700A23EB9 /* CollisionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollisionsTests.m; sourceTree = "<group>"; };
 		AE1A325219242DA000A23EB9 /* BallPitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallPitView.h; sourceTree = "<group>"; };
 		AE1A325319242DA000A23EB9 /* BallPitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallPitView.m; sourceTree = "<group>"; };
+		AE7623C219255C260069C8F1 /* GravityLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravityLayer.h; sourceTree = "<group>"; };
+		AE7623C319255C260069C8F1 /* GravityLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				AE1A322A19242D0600A23EB9 /* AppDelegate.m */,
 				AE1A325219242DA000A23EB9 /* BallPitView.h */,
 				AE1A325319242DA000A23EB9 /* BallPitView.m */,
+				AE7623C219255C260069C8F1 /* GravityLayer.h */,
+				AE7623C319255C260069C8F1 /* GravityLayer.m */,
 				AE1A323219242D0600A23EB9 /* ViewController.h */,
 				AE1A323319242D0600A23EB9 /* ViewController.m */,
 			);
@@ -209,6 +214,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Shusta;
 				TargetAttributes = {
+					AE1A321619242D0600A23EB9 = {
+						DevelopmentTeam = 4SU73WX9P5;
+					};
 					AE1A323A19242D0600A23EB9 = {
 						TestTargetID = AE1A321619242D0600A23EB9;
 					};
@@ -259,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE1A323419242D0600A23EB9 /* ViewController.m in Sources */,
+				AE7623C419255C260069C8F1 /* GravityLayer.m in Sources */,
 				AE1A322B19242D0600A23EB9 /* AppDelegate.m in Sources */,
 				AE1A322719242D0600A23EB9 /* main.m in Sources */,
 				AE1A325419242DA000A23EB9 /* BallPitView.m in Sources */,
@@ -380,10 +389,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Collisions/Collisions-Prefix.pch";
 				INFOPLIST_FILE = "Collisions/Collisions-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "72595EFF-1043-465D-B336-A1C867385AA6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,10 +405,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Collisions/Collisions-Prefix.pch";
 				INFOPLIST_FILE = "Collisions/Collisions-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "72595EFF-1043-465D-B336-A1C867385AA6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -460,6 +475,7 @@
 				AE1A324E19242D0700A23EB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE1A324F19242D0700A23EB9 /* Build configuration list for PBXNativeTarget "CollisionsTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +484,7 @@
 				AE1A325119242D0700A23EB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
