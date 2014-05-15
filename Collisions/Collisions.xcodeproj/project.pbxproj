@@ -395,7 +395,7 @@
 				GCC_PREFIX_HEADER = "Collisions/Collisions-Prefix.pch";
 				INFOPLIST_FILE = "Collisions/Collisions-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "72595EFF-1043-465D-B336-A1C867385AA6";
+				PROVISIONING_PROFILE = "31456975-E8FE-4DC1-B866-BE5E7AA966C7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -411,7 +411,7 @@
 				GCC_PREFIX_HEADER = "Collisions/Collisions-Prefix.pch";
 				INFOPLIST_FILE = "Collisions/Collisions-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "72595EFF-1043-465D-B336-A1C867385AA6";
+				PROVISIONING_PROFILE = "31456975-E8FE-4DC1-B866-BE5E7AA966C7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -21,9 +21,11 @@
 {
     [super viewDidLoad];
     [self addBallPit];
-
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 - (void)addBallPit {
     self.ballPitView = [[BallPitView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.ballPitView];

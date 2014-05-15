@@ -32,62 +32,27 @@
 - (void)commonInit {
     self.backgroundColor = [UIColor whiteColor];
 
-    self.square = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 80, .origin.y = 80, .size.width = 100, .size.height = 100}];
-    self.square.backgroundColor = [UIColor lightGrayColor];
-    self.square.transform = CGAffineTransformMakeRotation(M_PI_4);
-    [self addSubview:self.square];
-    
-    self.smallSquare = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 20, .origin.y = 390, .size.width = 20, .size.height = 20 }];
-    self.smallSquare.backgroundColor = [UIColor darkGrayColor];
-    [self addSubview:self.smallSquare];
-    
-    self.mediumSquare = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 290, .origin.y = 200, .size.width = 30, .size.height = 30 }];
-    self.mediumSquare.backgroundColor = [UIColor blackColor];
-    [self addSubview:self.mediumSquare];
-
-    self.boundary = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 110, .origin.y = 230, .size.width = 11, .size.height = 20}];
-    self.boundary.backgroundColor = [UIColor orangeColor];
-    [self addSubview:self.boundary];
+    NSInteger sideCount = 7;
+    NSInteger size = 20;
+    NSInteger count = 0;
+    NSInteger inset = 100;
+    for (NSInteger i = inset; i < inset + sideCount * size; i += size) {
+        for (NSInteger j = inset; j < inset + sideCount * size; j += size) {
+            UIView *particle = [[UIView alloc] initWithFrame:(CGRect){.origin.x = j, .origin.y = i, .size.height = size, .size.width = size}];
+            particle.backgroundColor = count % 2 ? [UIColor blackColor] : [UIColor darkGrayColor];
+            ++count;
+            [self addSubview:particle];
+        }
+    }
 
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
-
-    UIView *otherBoundary = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 160, .origin.y = 470, .size.width = 20, .size.height = 20}];
-    otherBoundary.backgroundColor = [UIColor greenColor];
-    [self addSubview:otherBoundary];
-
-    UIView *anotherBoundary = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 50, .origin.y = 400, .size.width = 5, .size.height = 50}];
-    anotherBoundary.backgroundColor = [UIColor magentaColor];
-    [self addSubview:anotherBoundary];
-
-    UIView *yetAnotherBoundary = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 270, .origin.y = 370, .size.width = 5, .size.height = 50}];
-    yetAnotherBoundary.backgroundColor = [UIColor purpleColor];
-    [self addSubview:yetAnotherBoundary];
-    
-    UIView *moreBoundaries = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 200, .origin.y = 40, .size.width = 15, .size.height = 15}];
-    moreBoundaries.backgroundColor = [UIColor redColor];
-    [self addSubview:moreBoundaries];
-    
-    UIView *largeBoundary = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 100, .origin.y = 300, .size.width = 150, .size.height = 100}];
-    largeBoundary.backgroundColor = [UIColor blueColor];
-    [self addSubview:largeBoundary];
-
-    self.collisions = [[UICollisionBehavior alloc] initWithItems:@[self.square, self.smallSquare, self.mediumSquare,
-                                                                   self.boundary, otherBoundary, anotherBoundary, yetAnotherBoundary, moreBoundaries, largeBoundary]];
+    self.collisions = [[UICollisionBehavior alloc] initWithItems:self.subviews];
     self.collisions.translatesReferenceBoundsIntoBoundary = YES;
-//
-//    [self.collisions addBoundaryWithIdentifier:@"boundaryPath"
-//                                       forPath:[UIBezierPath bezierPathWithRect:self.boundary.frame]];
-//    [self.collisions addBoundaryWithIdentifier:@"other boundary path"
-//                                       forPath:[UIBezierPath bezierPathWithRect:otherBoundary.frame]];
-//    [self.collisions addBoundaryWithIdentifier:@"another boundary path"
-//                                       forPath:[UIBezierPath bezierPathWithRect:anotherBoundary.frame]];
-//    [self.collisions addBoundaryWithIdentifier:@"yet another boundary path"
-//                                       forPath:[UIBezierPath bezierPathWithRect:yetAnotherBoundary.frame]];
-//    [self.collisions addBoundaryWithIdentifier:@"more boundary path"
-//                                       forPath:[UIBezierPath bezierPathWithRect:moreBoundaries.frame]];
     [self.animator addBehavior:self.collisions];
     
-
+    UIDynamicItemBehavior *elasticityBehavior = [[UIDynamicItemBehavior alloc] initWithItems:self.subviews];
+    elasticityBehavior.elasticity = 0.7f;
+    [self.animator addBehavior:elasticityBehavior];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder
