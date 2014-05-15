@@ -50,8 +50,6 @@
     [self addSubview:self.boundary];
 
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
-    self.collisions = [[UICollisionBehavior alloc] initWithItems:@[self.square, self.smallSquare, self.mediumSquare]];
-    self.collisions.translatesReferenceBoundsIntoBoundary = YES;
 
     UIView *otherBoundary = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 160, .origin.y = 470, .size.width = 20, .size.height = 20}];
     otherBoundary.backgroundColor = [UIColor greenColor];
@@ -68,17 +66,25 @@
     UIView *moreBoundaries = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 200, .origin.y = 40, .size.width = 15, .size.height = 15}];
     moreBoundaries.backgroundColor = [UIColor redColor];
     [self addSubview:moreBoundaries];
+    
+    UIView *largeBoundary = [[UIView alloc] initWithFrame:(CGRect){.origin.x = 100, .origin.y = 300, .size.width = 150, .size.height = 100}];
+    largeBoundary.backgroundColor = [UIColor blueColor];
+    [self addSubview:largeBoundary];
 
-    [self.collisions addBoundaryWithIdentifier:@"boundaryPath"
-                                       forPath:[UIBezierPath bezierPathWithRect:self.boundary.frame]];
-    [self.collisions addBoundaryWithIdentifier:@"other boundary path"
-                                       forPath:[UIBezierPath bezierPathWithRect:otherBoundary.frame]];
-    [self.collisions addBoundaryWithIdentifier:@"another boundary path"
-                                       forPath:[UIBezierPath bezierPathWithRect:anotherBoundary.frame]];
-    [self.collisions addBoundaryWithIdentifier:@"yet another boundary path"
-                                       forPath:[UIBezierPath bezierPathWithRect:yetAnotherBoundary.frame]];
-    [self.collisions addBoundaryWithIdentifier:@"more boundary path"
-                                       forPath:[UIBezierPath bezierPathWithRect:moreBoundaries.frame]];
+    self.collisions = [[UICollisionBehavior alloc] initWithItems:@[self.square, self.smallSquare, self.mediumSquare,
+                                                                   self.boundary, otherBoundary, anotherBoundary, yetAnotherBoundary, moreBoundaries, largeBoundary]];
+    self.collisions.translatesReferenceBoundsIntoBoundary = YES;
+//
+//    [self.collisions addBoundaryWithIdentifier:@"boundaryPath"
+//                                       forPath:[UIBezierPath bezierPathWithRect:self.boundary.frame]];
+//    [self.collisions addBoundaryWithIdentifier:@"other boundary path"
+//                                       forPath:[UIBezierPath bezierPathWithRect:otherBoundary.frame]];
+//    [self.collisions addBoundaryWithIdentifier:@"another boundary path"
+//                                       forPath:[UIBezierPath bezierPathWithRect:anotherBoundary.frame]];
+//    [self.collisions addBoundaryWithIdentifier:@"yet another boundary path"
+//                                       forPath:[UIBezierPath bezierPathWithRect:yetAnotherBoundary.frame]];
+//    [self.collisions addBoundaryWithIdentifier:@"more boundary path"
+//                                       forPath:[UIBezierPath bezierPathWithRect:moreBoundaries.frame]];
     [self.animator addBehavior:self.collisions];
     
 
@@ -103,7 +109,8 @@
 }
 
 - (void)startGravity {
-    self.gravity = [[UIGravityBehavior alloc] initWithItems:@[self.square, self.smallSquare, self.mediumSquare]];
+//    self.gravity = [[UIGravityBehavior alloc] initWithItems:@[self.square, self.smallSquare, self.mediumSquare]];
+    self.gravity = [[UIGravityBehavior alloc] initWithItems:self.subviews];
 
 //    __block NSInteger count = 0;
 //    __weak BallPitView *weakSelf = self;
