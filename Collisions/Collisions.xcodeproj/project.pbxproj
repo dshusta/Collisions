@@ -20,6 +20,7 @@
 		AE1A323F19242D0600A23EB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1A321E19242D0600A23EB9 /* UIKit.framework */; };
 		AE1A324719242D0700A23EB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE1A324519242D0700A23EB9 /* InfoPlist.strings */; };
 		AE1A324919242D0700A23EB9 /* CollisionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1A324819242D0700A23EB9 /* CollisionsTests.m */; };
+		AE1A325419242DA000A23EB9 /* BallPitView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1A325319242DA000A23EB9 /* BallPitView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		AE1A324419242D0700A23EB9 /* CollisionsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollisionsTests-Info.plist"; sourceTree = "<group>"; };
 		AE1A324619242D0700A23EB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE1A324819242D0700A23EB9 /* CollisionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollisionsTests.m; sourceTree = "<group>"; };
+		AE1A325219242DA000A23EB9 /* BallPitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallPitView.h; sourceTree = "<group>"; };
+		AE1A325319242DA000A23EB9 /* BallPitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallPitView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +113,7 @@
 		AE1A322019242D0600A23EB9 /* Collisions */ = {
 			isa = PBXGroup;
 			children = (
-				AE1A322919242D0600A23EB9 /* AppDelegate.h */,
-				AE1A322A19242D0600A23EB9 /* AppDelegate.m */,
-				AE1A323219242D0600A23EB9 /* ViewController.h */,
-				AE1A323319242D0600A23EB9 /* ViewController.m */,
+				AE1A325619242DB600A23EB9 /* Classes */,
 				AE1A323519242D0600A23EB9 /* Images.xcassets */,
 				AE1A322119242D0600A23EB9 /* Supporting Files */,
 			);
@@ -147,6 +147,19 @@
 				AE1A324519242D0700A23EB9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE1A325619242DB600A23EB9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AE1A322919242D0600A23EB9 /* AppDelegate.h */,
+				AE1A322A19242D0600A23EB9 /* AppDelegate.m */,
+				AE1A325219242DA000A23EB9 /* BallPitView.h */,
+				AE1A325319242DA000A23EB9 /* BallPitView.m */,
+				AE1A323219242D0600A23EB9 /* ViewController.h */,
+				AE1A323319242D0600A23EB9 /* ViewController.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +261,7 @@
 				AE1A323419242D0600A23EB9 /* ViewController.m in Sources */,
 				AE1A322B19242D0600A23EB9 /* AppDelegate.m in Sources */,
 				AE1A322719242D0600A23EB9 /* main.m in Sources */,
+				AE1A325419242DA000A23EB9 /* BallPitView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

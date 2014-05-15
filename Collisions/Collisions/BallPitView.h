@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BallPitView.h
 //  Collisions
 //
 //  Created by pivotal on 5/14/14.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class BallPitView;
+@interface BallPitView : UIView
 
-@interface ViewController : UIViewController
+- (void)startGravity;
 
 @end
