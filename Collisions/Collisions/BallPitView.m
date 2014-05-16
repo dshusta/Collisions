@@ -32,7 +32,7 @@
 - (void)commonInit {
     self.backgroundColor = [UIColor whiteColor];
 
-    NSInteger sideCount = 4;
+    NSInteger sideCount = 7;
     NSInteger size = 20;
     NSInteger count = 0;
     NSInteger inset = 100;
