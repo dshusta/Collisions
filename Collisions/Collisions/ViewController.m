@@ -49,10 +49,4 @@
     [self addBallPit];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-
 @end

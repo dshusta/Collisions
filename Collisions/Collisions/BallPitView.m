@@ -32,7 +32,7 @@
 - (void)commonInit {
     self.backgroundColor = [UIColor whiteColor];
 
-    NSInteger sideCount = 7;
+    NSInteger sideCount = 4;
     NSInteger size = 20;
     NSInteger count = 0;
     NSInteger inset = 100;
@@ -74,50 +74,7 @@
 }
 
 - (void)startGravity {
-//    self.gravity = [[UIGravityBehavior alloc] initWithItems:@[self.square, self.smallSquare, self.mediumSquare]];
     self.gravity = [[UIGravityBehavior alloc] initWithItems:self.subviews];
-
-//    __block NSInteger count = 0;
-//    __weak BallPitView *weakSelf = self;
-//    NSInteger numberOfSquares = 200;
-//    NSMutableArray *arrayOfSquares = [[NSMutableArray alloc] initWithCapacity:numberOfSquares];
-//    NSMutableArray *arrayOfSmallSquares = [[NSMutableArray alloc] initWithCapacity:numberOfSquares];
-//    self.gravity.action = ^{
-//        if (count % 1 == 0) {
-//            UIView *newSquare = [[UIView alloc] initWithFrame:weakSelf.square.bounds];
-//            newSquare.center = weakSelf.square.center;
-//            newSquare.transform = weakSelf.square.transform;
-//            newSquare.backgroundColor = [UIColor clearColor];
-//            newSquare.layer.borderColor = [[UIColor redColor] CGColor];
-//            newSquare.layer.borderWidth = 0.5;
-//            [weakSelf addSubview:newSquare];
-//            [arrayOfSquares addObject:newSquare];
-//
-//            newSquare = [[UIView alloc] initWithFrame:weakSelf.smallSquare.bounds];
-//            newSquare.center = weakSelf.smallSquare.center;
-//            newSquare.transform = weakSelf.smallSquare.transform;
-//            newSquare.backgroundColor = [UIColor clearColor];
-//            newSquare.layer.borderColor = [[UIColor blueColor] CGColor];
-//            newSquare.layer.borderWidth = 0.5;
-//            [weakSelf addSubview:newSquare];
-//            [arrayOfSmallSquares addObject:newSquare];
-//            
-//            if (arrayOfSquares.count > numberOfSquares - 1) {
-//                UIView *square = arrayOfSquares[0];
-//                [square removeFromSuperview];
-//                [arrayOfSquares removeObjectAtIndex:0];
-//            }
-//            
-//            if (arrayOfSmallSquares.count > numberOfSquares - 1) {
-//                UIView *square = arrayOfSmallSquares[0];
-//                [square removeFromSuperview];
-//                [arrayOfSmallSquares removeObjectAtIndex:0];
-//            }
-//
-//        }
-//        
-//        ++count;
-//    };
 
     NSNumber *minValue = @-5.0;
     NSNumber *maxValue = @5.0;
